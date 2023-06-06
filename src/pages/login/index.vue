@@ -98,13 +98,13 @@ export default {
               {
                 //设置人物的角色为管理员 0
                 sessionStorage.setItem('user_role', 0);
-                this.navigate_register()
+                this.navigate_users()
               }
 
               else{
                   //设置人物的角色为用户
                   sessionStorage.setItem('user_role', 1);
-                  this.navigate_register()
+                  this.navigate_users()()
               }
               
               
@@ -133,7 +133,7 @@ export default {
     //用编程式路由导航进行跳转到register页面
     navigate_register() {
       this.$router.push({
-        name:'userhome',
+        name:'register',
         params:{
             account:this.login.account,
           
@@ -142,7 +142,18 @@ export default {
 
       console.log(this.login.account)
     },
-    
+    //跳转到用户或者管理者页面
+    navigate_users() {
+      this.$router.push({
+        name:'userhome',
+        params:{
+            account:this.login.account,
+          
+        }
+      }); // 在点击事件中导航到指定路径
+
+      // console.log(this.login.account)
+    },
   },
   mounted() {
     // class Verification {

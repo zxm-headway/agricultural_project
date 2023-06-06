@@ -1,7 +1,3 @@
-import $ from "@/assets/chinaMap/js/jquery.js"
-
-import echarts from  "@/assets/chinaMap/js/echarts.min.js"
-
 
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {

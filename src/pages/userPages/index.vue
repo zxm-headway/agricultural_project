@@ -160,7 +160,7 @@
 
     <main id="mainFrame" name="mainFrame" width="100%" height="100%" class="flexbox-col">
       <!-- <h2 text-align="center">欢迎进入农作物碳汇分析及可视化系统!</h2> -->
-      <router-view></router-view>
+      <keep-alive><router-view></router-view></keep-alive>
       <!-- <iframe src=""  id="mainFrame" name="mainFrame" width="100%" height="100%" frameBorder="0"></iframe> -->
     </main>
   </div>
@@ -187,6 +187,11 @@ export default {
       user_role: sessionStorage.getItem("user_role"),
     };
   },
+  watch: {
+   $route(to, from) {
+       window.location.reload(); //监测到路由发生跳转时刷新一次页面
+   },
+},
 
   computed: {
     // console.log(this.$route.params.account)
